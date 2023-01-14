@@ -15,6 +15,7 @@ def test_sanity_check():
     x.requires_grad = True
     z = 2 * x + 2 + x
     q = z.relu() + z * x
+    print(f'Value of Q, {q}')
     h = (z * z).relu()
     y = h + q + q * x
     y.backward()
